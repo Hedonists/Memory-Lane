@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <div className="relative w-full h-screen">
       <img
-        className="absolute inset-0 w-full h-full object-cover scale-110 xl:h-max blur-border"
+        className="absolute inset-0 w-full h-full object-cover scale-110 xl:h-max"
         src={assets.hero_bg}
         alt="hero"
       />

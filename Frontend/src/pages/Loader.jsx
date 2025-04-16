@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import CountUp from "../components/LoadCount"
+import { assets } from '../assets/assets'
+
 
 const Loader = () => {
+
+  useEffect(() => {
+    const img = new Image()
+    img.src = assets.hero_bg
+  }, [])
+
+
   return (
     <div className='flex min-h-screen justify-center items-center overflow-hidden'>
         <CountUp

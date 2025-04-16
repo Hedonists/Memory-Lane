@@ -51,10 +51,13 @@ const ChatHeader: React.FC<ChatHeaderProps> = ({
       
       {/* Ayush: My Space button */}
       <button
-        className="p-1.5 md:p-2 text-[#459ddc] mr-1"
+        className="inline-block p-1.5 md:hidden md:p-2 text-[#459ddc] mr-1"
         onClick={onOpenSpace}
       >
         <FolderOpenDot className="w-6 h-6" />
+      </button>
+      <button className='hidden md:inline-block p-1.5 md:p-2 md:px-4 text-[#459ddc] bg-gray-800/60 hover:bg-gray-700/40 font-medium rounded-xl mr-6' onClick={onOpenSpace}>
+        My Space
       </button>
     </div>
   );

@@ -11,7 +11,8 @@ const Space = ({ onClose }) => {
 
   const handleUpload = (e) => {
     const files = Array.from(e.target.files)
-    const newAudios = files.map(file => ({
+    const audioFiles = files.filter(file => file.type.startsWith('audio/'))
+    const newAudios = audioFiles.map(file => ({
       file,
       name: file.name,
       url: URL.createObjectURL(file),
@@ -78,25 +79,24 @@ const Space = ({ onClose }) => {
 
         <h2 className="text-xl sm:text-2xl font-semibold mb-4 text-center">Upload Your Audio</h2>
         {/* Input & selected audios */}
-<div className="flex flex-col items-center justify-center w-full">
-  {selectedAudios.length === 0 ? (
-    <label className="cursor-pointer border border-white/20 bg-white/5 text-white text-sm px-4 py-2 rounded-lg hover:bg-white/10 transition shadow-md">
-      <input
-        ref={fileInputRef}
-        type="file"
-        accept="audio/*"
-        onChange={handleUpload}
-        className="hidden"
-        multiple
-      />
-      Upload Audio
-    </label>
-  ) : (
-    <div className="relative mt-4">
-      {renderAudioCard(selectedAudios[0], true, handleDeleteSelected)}
+        <div className="flex flex-col items-center justify-center w-full">
+          {selectedAudios.length === 0 ? (
+            <label className="cursor-pointer border border-white/20 bg-white/5 text-white text-sm px-4 py-2 rounded-lg hover:bg-white/10 transition shadow-md">
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept="audio/*"
+                onChange={handleUpload}
+                className="hidden"
+              />
+              Upload Audio
+            </label>
+          ) : (
+            <div className="relative mt-4">
+              {renderAudioCard(selectedAudios[0], true, handleDeleteSelected)}
 
 
-      {/* Submit Button */}
+              {/* Submit Button */}
       <button
         onClick={handleSubmit}
         className="absolute -top-4 -right-3 text-xs bg-white/10 hover:bg-white/20 px-2 py-1 rounded-md text-white font-medium shadow-sm transition"

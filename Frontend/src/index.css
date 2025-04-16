@@ -8,11 +8,11 @@
     }
   }
 
-  /* body {
-    font-family: "Codystar",sans-serif;
-  } */
   body {
     font-family: "Raleway",sans-serif;
+  }
+  .font-outfit {
+    font-family: "Outfit", sans-serif;
   }
   
   /* Initial state: The content is transparent */
@@ -36,36 +36,6 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-* {
-  cursor: none !important;
-}
-@media (pointer: coarse) {
-  .custom-cursor {
-    display: none;
-  }
-}
-
-
-.custom-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #ccc;
-  background-color: transparent;
-  border-radius: 9999px;
-  pointer-events: none;
-  z-index: 99999;
-  transform: translate3d(0, 0, 0);
-  transition: transform 0.05s ease, box-shadow 0.2s ease;
-  will-change: transform;
-  mix-blend-mode: difference;
-  box-shadow:
-    0 0 6px rgba(255, 255, 255, 0.4),
-    0 0 12px rgba(255, 255, 255, 0.3),
-    0 0 18px rgba(255, 255, 255, 0.2);
-}
 
 
 .blur-border{
@@ -77,8 +47,6 @@
   background: linear-gradient(to right, #459ddc66, #ffffff11);
   filter: blur(10px);
 }
-
-
 
 
 /* Adarsh from here */
